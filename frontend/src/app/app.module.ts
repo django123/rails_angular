@@ -10,6 +10,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import {ApiService} from "./api.service";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,6 +25,9 @@ import {ApiService} from "./api.service";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule, ReactiveFormsModule,
+
     AppRoutingModule
   ],
   providers: [ApiService],

@@ -1,3 +1,34 @@
-<p>
-  product-list works!
-</p>
+<div class="panel panel-default" style="margin-top:10px;">
+  <div class="panel-heading">
+    Products
+  </div>
+  <div class="panel-body" style="position:relative">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor=" let product of products">
+          <td>{{product.id}}</td>
+          <td>{{product.name}}</td>
+          <td>
+              <span>
+                <button (click)="editProduct(product)" class="btn btn-info btn-rounded btn-sm my-0">Update</button>
+              </span>
+          </td>
+          <td>
+              <span class="table-remove">
+                <button (click)="deleteProduct(product)" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button>
+              </span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
