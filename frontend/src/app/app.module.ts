@@ -12,6 +12,9 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import {ApiService} from "./api.service";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ProductUpdateComponent } from './product-update/product-update.component';
+import { OrderUpdateComponent } from './order-update/order-update.component';
+import { CustomerUpdateComponent } from './customer-update/customer-update.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     CustomerAddComponent,
     ProductListComponent,
     OrderListComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    ProductUpdateComponent,
+    OrderUpdateComponent,
+    CustomerUpdateComponent
   ],
   imports: [
     BrowserModule,

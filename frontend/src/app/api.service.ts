@@ -10,7 +10,7 @@ import {Order} from "./model/order";
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl= "http://localhost:3000/";
+  private baseUrl= "http://localhost:3000";
 
 
   constructor(private http: HttpClient) { }
@@ -20,6 +20,21 @@ export class ApiService {
        return this.http.get(`${this.baseUrl}/products`)
    }
 
+  updateProduct(id: number, product: Product): Observable<any>  {
+
+    return this.http.put<Product>(`${this.baseUrl}/produts/${id}`, product)
+  }
+
+  deleteProduct(id: number): Observable<any>  {
+
+    return this.http.delete(`${this.baseUrl}/products/${id}`)
+  }
+  getProduct(id: number): Observable<any>  {
+    return this.http.get(`${this.baseUrl}/products/${id}`)
+  }
+
+
+
   getOrderList(): Observable<any> {
     return this.http.get(`${this.baseUrl}/orders`)
   }
@@ -28,9 +43,7 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/customers`)
   }
 
-  getProduct(id: number): Observable<any>  {
-    return this.http.get(`${this.baseUrl}/products/${id}`)
-  }
+
 
   getCustomer(id: number): Observable<any>  {
     return this.http.get(`${this.baseUrl}/customers/${id}`)
@@ -53,13 +66,5 @@ export class ApiService {
     return this.http.post<Order>(`${this.baseUrl}/orders`, order)
   }
 
-  updateProduct(id: number, product: Product): Observable<any>  {
 
-    return this.http.put(`${this.baseUrl}/orders/${id}`, product)
-  }
-
-  deleteProduct(id: number): Observable<any>  {
-
-    return this.http.delete(`${this.baseUrl}/orders/${id}`)
-  }
 }
